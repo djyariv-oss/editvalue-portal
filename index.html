@@ -1,60 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EditValue Portal | העלאת פרויקט</title>
+    <title>EditValue Portal | הבאים ברוכים</title>
+    <!-- We reference the common style file, assuming your main.css already handles basics like dark background -->
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    
+    <!-- Assuming "Luxe Minimal" uses elegant fonts, common pairs are: -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Specific page styles to match the structure of the image */
+        :root {
+            --color-luxe-purple: #c88cff;
+            --color-luxe-bg: #0a0a0a;
+            --color-luxe-text: #f5f5f5;
+            --color-step-num: #6b21a8; /* Darker violet for numbers */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0; padding: 0; background: var(--color-luxe-bg); color: var(--color-luxe-text);
+        }
+
+        .portal-wrapper {
+            max-width: 480px; margin: 0 auto; padding: 20px; text-align: center;
+        }
+
+        /* Avatar with glowing effect */
+        .avatar-section { margin-bottom: 30px; position: relative; }
+        .avatar-image {
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 3px solid var(--color-luxe-purple);
+            box-shadow: 0 0 15px var(--color-luxe-purple);
+        }
+
+        /* Headings and descriptions */
+        .welcome-title {
+            font-family: 'Playfair Display', serif; font-size: 2.2rem;
+            margin-bottom: 10px; line-height: 1.1;
+        }
+        .highlight-name { color: var(--color-luxe-purple); }
+        .description { font-size: 1.1rem; color: #a3a3a3; margin-bottom: 40px; }
+
+        /* Stepper/Features list */
+        .features-list { margin-bottom: 40px; }
+        .feature-item {
+            display: flex; align-items: center; justify-content: flex-end;
+            margin-bottom: 25px; gap: 15px; position: relative;
+        }
+
+        /* Step numbers and connecting line */
+        .step-number {
+            font-size: 2rem; font-weight: 700; color: var(--color-step-num);
+            width: 40px; text-align: center;
+        }
+        
+        /* Dashed connecting line - simplified representation */
+        .feature-item:not(:last-child)::after {
+            content: ''; position: absolute; right: 19px; top: 40px;
+            height: 25px; width: 1px;
+            border-left: 2px dashed #404040;
+        }
+
+        /* Icon containers */
+        .icon-box {
+            width: 45px; height: 45px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(200, 140, 255, 0.1);
+            color: var(--color-luxe-purple); font-size: 1.2rem;
+        }
+
+        /* Text area next to step */
+        .text-box { text-align: right; flex: 1; }
+        .text-title { font-weight: 600; margin-bottom: 3px; font-size: 1.1rem; }
+        .text-desc { color: #888; font-size: 0.9rem; }
+
+        /* Actions/Inputs associated with steps */
+        .action-area { width: 120px; display: flex; justify-content: flex-start; }
+        .luxe-input {
+            width: 100%; padding: 10px; border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #333; color: white; text-align: right;
+        }
+        .luxe-btn-small {
+            padding: 8px 15px; border-radius: 8px;
+            background: rgba(168, 85, 247, 0.1); /* light violet */
+            color: white; border: 1px solid var(--color-luxe-purple);
+            font-size: 0.85rem; font-weight: 600; cursor: pointer;
+        }
+
+        /* Big call to action button and footer */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(200, 140, 255, 0.1);
+            border-radius: 20px; padding: 25px;
+        }
+        .btn-luxe-cta {
+            width: 100%; padding: 16px; border-radius: 12px;
+            background: linear-gradient(135deg, #c88cff 0%, #a855f7 100%);
+            color: #0a0a0a; font-size: 1.4rem; font-weight: 700;
+            border: none; cursor: pointer; transition: 0.3s ease;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+        }
+        .btn-luxe-cta:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5); }
+        .location-note { color: #666; font-size: 0.9rem; margin-top: 15px; }
+    </style>
 </head>
-<body class="portal-body">
-    <div class="portal-container">
-        <header>
-            <h1 class="display-font">היי, ברוך הבא</h1>
-            <p>איך תרצה להעביר לנו את חומרי הגלם היום?</p>
-        </header>
+<body>
+    <div class="portal-wrapper">
+        <div class="avatar-section">
+            <!-- Using the same avatar image provided in previous context -->
+            <img src="avatar.png" alt="EditValue" class="avatar-image">
+        </div>
 
-        <form id="uploadForm" class="portal-form">
-            <div class="form-group">
-                <input type="text" id="clientName" placeholder="שם הצלם / הסטודיו" required>
+        <h1 class="welcome-title">ברוכים הבאים לאפליקציית <span class="highlight-name">אמינדב</span></h1>
+        <p class="description">שולחים חומרים מכל מקום, בקלות ובמהירות</p>
+
+        <div class="features-list">
+            <!-- Step 1 -->
+            <div class="feature-item">
+                <div class="action-area">
+                    <input type="text" placeholder="הזינו שם פרויקט" class="luxe-input">
+                </div>
+                <div class="text-box">
+                    <div class="text-title">שם הפרויקט</div>
+                    <div class="text-desc">נותנים שם ברור לפרויקט או לאירוע</div>
+                </div>
+                <div class="icon-box">✏️</div>
+                <div class="step-number">1</div>
             </div>
 
-            <div class="upload-options">
-                <label class="option-card">
-                    <input type="radio" name="uploadType" value="device" checked>
-                    <div class="card-content">
-                        <span class="icon">📱</span>
-                        <span>העלאה מהמכשיר</span>
-                    </div>
-                </label>
-
-                <label class="option-card">
-                    <input type="radio" name="uploadType" value="link">
-                    <div class="card-content">
-                        <span class="icon">🔗</span>
-                        <span>קישור חיצוני (Drive/Dropbox)</span>
-                    </div>
-                </label>
+            <!-- Step 2 -->
+            <div class="feature-item">
+                <div class="action-area">
+                    <button class="luxe-btn-small">⬆️ העלאה מהמכשיר</button>
+                </div>
+                <div class="text-box">
+                    <div class="text-title">העלאה מהמכשיר</div>
+                    <div class="text-desc">מעלים קבצים ישירות מהטלפון או המחשב</div>
+                </div>
+                <div class="icon-box">📱</div>
+                <div class="step-number">2</div>
             </div>
 
-            <div id="fileUploadArea" class="input-area">
-                <input type="file" id="fileInput" multiple>
-                <p class="hint">מתאים לקבצים קטנים או Reels</p>
+            <!-- Step 3 -->
+            <div class="feature-item">
+                <div class="action-area">
+                    <button class="luxe-btn-small">🛡️ העלאה דרך השירות שלנו</button>
+                </div>
+                <div class="text-box">
+                    <div class="text-title">שירות ההעלאה שלנו</div>
+                    <div class="text-desc">שולחים דרך מערכת ההעלאה המאובטחת שלנו</div>
+                </div>
+                <div class="icon-box">☁️</div>
+                <div class="step-number">3</div>
             </div>
 
-            <div id="linkUploadArea" class="input-area" style="display:none;">
-                <input type="url" id="externalLink" placeholder="הדבק כאן את הלינק שלך...">
+            <!-- Step 4 -->
+            <div class="feature-item">
+                <div class="action-area">
+                    <button class="luxe-btn-small">✅ קבלו קישור להורדה</button>
+                </div>
+                <div class="text-box">
+                    <div class="text-title">קישור להורדה</div>
+                    <div class="text-desc">בסיום תקבלו קישור מסודר להורדת החומר המוכן</div>
+                </div>
+                <div class="icon-box">🔗</div>
+                <div class="step-number">4</div>
             </div>
+        </div>
 
-            <button type="submit" class="btn-primary">שלח פרויקט לעבודה</button>
-        </form>
-
-        <div class="admin-note">
-            <p>צריך עזרה? <a href="https://wa.me/972549268465" target="_blank">שלח לנו הודעה</a></p>
+        <div class="cta-section">
+            <button class="btn-luxe-cta">✨ התחילו עכשיו</button>
+            <div class="location-note">📍 זמינים לכם מכל מקום</div>
         </div>
     </div>
+    
+    <!-- Note: Your app.js already handles logic for file upload methods and WhatsApp triggers -->
     <script src="app.js"></script>
 </body>
 </html>
