@@ -1,1 +1,60 @@
 
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditValue Portal | העלאת פרויקט</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="portal-body">
+    <div class="portal-container">
+        <header>
+            <h1 class="display-font">היי, ברוך הבא</h1>
+            <p>איך תרצה להעביר לנו את חומרי הגלם היום?</p>
+        </header>
+
+        <form id="uploadForm" class="portal-form">
+            <div class="form-group">
+                <input type="text" id="clientName" placeholder="שם הצלם / הסטודיו" required>
+            </div>
+
+            <div class="upload-options">
+                <label class="option-card">
+                    <input type="radio" name="uploadType" value="device" checked>
+                    <div class="card-content">
+                        <span class="icon">📱</span>
+                        <span>העלאה מהמכשיר</span>
+                    </div>
+                </label>
+
+                <label class="option-card">
+                    <input type="radio" name="uploadType" value="link">
+                    <div class="card-content">
+                        <span class="icon">🔗</span>
+                        <span>קישור חיצוני (Drive/Dropbox)</span>
+                    </div>
+                </label>
+            </div>
+
+            <div id="fileUploadArea" class="input-area">
+                <input type="file" id="fileInput" multiple>
+                <p class="hint">מתאים לקבצים קטנים או Reels</p>
+            </div>
+
+            <div id="linkUploadArea" class="input-area" style="display:none;">
+                <input type="url" id="externalLink" placeholder="הדבק כאן את הלינק שלך...">
+            </div>
+
+            <button type="submit" class="btn-primary">שלח פרויקט לעבודה</button>
+        </form>
+
+        <div class="admin-note">
+            <p>צריך עזרה? <a href="https://wa.me/972549268465" target="_blank">שלח לנו הודעה</a></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
